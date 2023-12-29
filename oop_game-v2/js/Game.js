@@ -32,4 +32,14 @@ class Game {
         return this.phrases[randomPhrase];
     }
 
+/**
+* Begins game by selecting a random phrase and displaying it to user
+*/
+    startGame() {
+        const overlay = document.querySelector('#overlay');
+        overlay.style.display = 'none';
+        this.activePhrase = this.getRandomPhrase();
+        const phrase = new Phrase(this.activePhrase.phrase);
+        phrase.addPhraseToDisplay();
+    };
 }

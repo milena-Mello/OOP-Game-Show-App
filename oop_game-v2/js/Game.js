@@ -5,6 +5,7 @@ class Game {
         this.activePhrase = null;
     }
 
+    // phrases object:
     createPhrases() {
         const phrases = [
             {
@@ -26,5 +27,9 @@ class Game {
         return phrases;
     }
 
+    getRandomPhrase() {
+        const randomPhrase = Math.floor(Math.random() * this.phrases.length);
+        return this.phrases[randomPhrase];
+    }
 
 }

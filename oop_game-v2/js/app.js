@@ -15,6 +15,18 @@ btnReset.addEventListener('click', () => {
     }
 });
 
+// physical computer keyboard to enter guesses (extra credit)
+document.addEventListener('keydown', (event) => {
+    const keys = document.querySelectorAll('#qwerty .key');
+    keys.forEach(key => {
+        if (key.textContent === event.key && key.disabled === false) {
+            game.handleInteraction(key);
+        }
+    });
+});
+
+
+
 
 
 

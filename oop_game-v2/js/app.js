@@ -1,18 +1,18 @@
-const game = new Game();
+let game = '';
 const btnReset = document.querySelector('#btn__reset');
+const keys = document.querySelectorAll('.keyrow button');
 
-let firstGame = true;
+// Start game when start button is clicked
 btnReset.addEventListener('click', () => {
+    game = new Game();
     game.startGame();
+});
 
-    if (firstGame) {
-        document.querySelectorAll('#qwerty .key').forEach(elem => {
-            elem.addEventListener('click', (event) => {
-                game.handleInteraction(event.target);
-            })
-        });
-        firstGame = false;
-    }
+// Handle onscreen keyboard button clicks
+keys.forEach(key => {
+    key.addEventListener('click', () => {
+        game.handleInteraction(key);
+    });
 });
 
 // physical computer keyboard to enter guesses (extra credit)
